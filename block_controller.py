@@ -344,38 +344,7 @@ class Block_Controller(object):
             score = score - keepLow * 15.0
 
 
-        if prt == True: #88行目のEvalValueのみでprintしたい＝Trueにする。88行目のEvalValueはStrategyで確定されたdirectionx, x0の時のboardを持ってきている
-            path = '..\\tetris\\game_manager\\block_controller_log.txt'
-            with open (path, mode ="a") as f:
-                for y in range(height):
-                    f.write("\n")
-                    for x in range(width):
-                        boardElmt = board[y*width+x] 
-                        f.write(str(boardElmt).replace("0","_")+" ")  
-
-                f.write("\n" + "\n" + \
-                "CurrentShape_index = " + str(self.CurrentShape_index) +"\n" + \
-                "score = " + str(score) + "\n" + \
-                "LowestX = " + str(LowestX) + "\n" + \
-                "keepLow = " + str(keepLow) + "\n" + \
-                "NextShapeCapable = " + str(NextShapeCapable) +"\n" + \
-                "joinBlockMaxDy = " + str(joinBlockMaxDy) +"\n" + \
-                "fullLines = " + str(fullLines) +"\n" + \
-                "DeadY = " + str(DeadY) +"\n" + \
-                "nDeadY = " + str(nDeadY) +"\n" + \
-                "CurDeadY = " + str(CurDeadY) +"\n" + \
-                "CurDeadYinRange = " + str(CurDeadYinRange) +"\n" + \
-                "nCurDeadYinRange = " + str(nCurDeadYinRange) +"\n" + \
-                "adjFullLines = " + str(adjFullLines) +"\n" + \
-                "Chasm = " + str(Chasm) +"\n" + \
-                "(absDy-absDyforLowerEdgeY) = " + str(absDy-absDyforLowerEdgeY) +"\n" + \
-                "max(BlockMaxY) = " + str(max(BlockMaxY)) +"\n" + \
-                "Time_Remain = " + str(self.Game_Time - self.Elapsed_Time) +"\n" + \
-                "CurBlockMaxY = " + str(CurBlockMaxY) +"\n" + \
-                "BlockMaxY = " + str(BlockMaxY) +"\n" + \
-                "SortedMaxY[1] = " +str(SortedMaxY[1]) +"\n" + \
-                "BlockMaxDy = " + str(BlockMaxDy) +"\n")
-                
+       
 
         #score = score - maxDy * 0.3                # maxDy
         #score = score - maxHeight * 5              # maxHeight
