@@ -108,7 +108,7 @@ def start():
 
     ## start game
     PYTHON_CMD = get_python_cmd()
-    cmd = PYTHON_CMD + ' ' + 'game_manager/game_manager.py' \
+    cmd = PYTHON_CMD + ' ' + 'game_manager.py' \
         + ' ' + '--game_time' + ' ' + str(GAME_TIME) \
         + ' ' + '--seed' + ' ' + str(RANDOM_SEED) \
         + ' ' + '--obstacle_height' + ' ' + str(OBSTACLE_HEIGHT) \
